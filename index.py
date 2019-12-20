@@ -1,7 +1,7 @@
 import math
 
 def getFile():
-  with open('przyklad.txt') as file:
+  with open('liczby.txt') as file:
     data = file.read()
     array = data.split('\n')
 
@@ -32,17 +32,19 @@ def secondEx():
       wholeSum = 0
       strongSum = 0
       value = value.strip()
-      for singleNumber in value:
-        for i in range(1, int(singleNumber)): # Factorial with singleNumber
-          if strongSum == 0: # If it's first number (strongSum == 0)
-            strongSum = i
-          else:
-            strongSum *= i
-          if(value == '145'):
-            print(singleNumber, i)
-        # Sum factorial with whole sum and reset factorial counter for next loop
-        wholeSum += strongSum
-        strongSum = 0
+
+      for singleNumber in value: # Each values in number
+        if int(singleNumber) > 0:
+          for i in range(1, int(singleNumber)): # Factorial with singleNumber
+            if strongSum == 0: # If it's first number (strongSum == 0)
+              strongSum = i
+            else:
+              strongSum *= i
+
+          print(wholeSum, value)
+          # Sum factorial with whole sum and reset factorial counter for next loop
+          wholeSum += strongSum
+          strongSum = 0
 
       if wholeSum == int(value):
         correctNumbers.append(int(value))
