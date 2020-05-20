@@ -11,15 +11,19 @@ def getFile():
 def firstEx():
   data = getFile()
   howMany = 0
+  powerOf3 = []
+  i = 0
+  while True:
+    p = 3**i
+    powerOf3.append(p)
+    if p > 1000000:
+      break
+    i += 1
 
   for value in data: # Loop throgh values
-    if len(value) > 0:
-      sqrNumber = int(value) # Set value to int
-      if sqrNumber >= 0: # Do it if its higher than 3
-        while sqrNumber > 4:
-          sqrNumber = math.sqrt(sqrNumber)
-        if sqrNumber == 3:
-          howMany += 1
+    if len(value.strip()) > 0:
+      if int(value) in powerOf3:
+        howMany += 1
 
   return '4.1: '+ str(howMany)
 
