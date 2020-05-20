@@ -28,7 +28,21 @@ def firstEx():
   return '4.1: '+ str(howMany)
 
 def secondEx():
-  return '4.2'
+  data = getFile()
+  whatNumber = []
+  for value in data:
+    if len(value.strip()) > 0:
+      number = int(value.strip())
+      sumStrong = 0
+      for char in value.strip():
+        strong = 1
+        for num in range(int(char)):
+          strong *= int(num + 1)
+        sumStrong += strong
+      if number == sumStrong:
+        whatNumber.append(number)
+
+  return '4.2: ' + str(whatNumber)
 
 def thirdEx():
   return '4.3'
