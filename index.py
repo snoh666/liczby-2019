@@ -45,6 +45,20 @@ def secondEx():
   return '4.2: ' + str(whatNumber)
 
 def thirdEx():
+
+  def NWD(a, b):
+    while (a % b != 0):
+      r = a % b
+      a = b
+      b = r
+    return b
+
+  data = getFile()
+  correctNum = False
+  for value in data:
+    number = int(value)
+
+
   return '4.3'
 
 
